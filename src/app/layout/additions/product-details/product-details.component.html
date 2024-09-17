@@ -1,0 +1,39 @@
+
+
+<div class="container w-85 flex my-5 mx-auto gap-3">
+
+    <div class="w-1/3">
+        <owl-carousel-o [options]="customOptions">
+
+          
+
+            @for (item of product?.images; track $index)
+            {
+                
+                <ng-template carouselSlide>
+                    <img class="" [src]="item">
+                  </ng-template>
+            }
+        
+          
+        
+        </owl-carousel-o>
+    </div>
+
+    <div class="ms-3 p-5 flex flex-col justify-center w-2/3 gap-3">
+        <h2 class="text-main">{{product?.category?.name}}</h2>
+        <p>{{product?.description}}</p>
+
+        <div class="  flex items-center justify-between">
+            <span class="font-bold">{{product?.price}} EGP</span>
+            <p class="block font-sans text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
+                <i class="fa-solid fa-star rating-color"></i>
+                {{product?.ratingsAverage}}
+            </p>
+        </div>
+
+        <button (click)="addToCart()" class="bg-green-600 text-white rounded-lg py-2 mt-5">Add to cart</button>
+
+    </div>
+    
+</div>

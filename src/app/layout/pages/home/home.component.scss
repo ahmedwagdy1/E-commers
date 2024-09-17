@@ -1,0 +1,10 @@
+.w-85{
+    width: 85%;
+}
+
+.product:hover .image{
+    transform: scale(1.25);
+}
+.image{
+    transition: all 0.5s;
+}

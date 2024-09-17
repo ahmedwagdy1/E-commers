@@ -1,0 +1,83 @@
+<nav class="bg-slate-100 py-4">
+
+  <div class="container text-center mx-auto 2xl:w-11/12 flex flex-col lg:flex-row lg:justify-between">
+
+    <!-- left -->
+    <div class="gap-3 flex flex-col items-center lg:flex-row ">
+
+      <img class="w-36" src="assets/images/freshcart-logo.svg">
+
+      <ul class="flex flex-col gap-1 lg:flex-row lg:gap-3">
+        @if(isLogin)
+        {
+        <li><a routerLink="/home" routerLinkActive="bg-green-600 p-3 rounded-lg text-white ">{{'Home' | translate}}</a>
+        </li>
+        <li><a routerLink="/cart" routerLinkActive="bg-green-600 p-3 rounded-lg text-white ">{{'Cart' | translate}}</a>
+        </li>
+        <li><a routerLink="/products" routerLinkActive="bg-green-600 p-3 rounded-lg text-white ">{{'Products' |
+            translate}}</a></li>
+        <li><a routerLink="/categories" routerLinkActive="bg-green-600 p-3 rounded-lg text-white ">{{'Category'|
+            translate}}</a></li>
+        <li><a routerLink="/brands" routerLinkActive="bg-green-600 p-3 rounded-lg text-white ">{{'Brands'|
+            translate}}</a></li>
+        }
+      </ul>
+
+    </div>
+
+    <!-- right -->
+    <div class="gap-2 items-center  flex flex-col lg:flex-row">
+
+      <ul class="gap-3 flex flex-col items-center lg:flex-row lg:order-1">
+        @if(!isLogin)
+        {
+        <li><a routerLink="/login" routerLinkActive="bg-green-600 p-3 rounded-lg text-white ">{{'LogIn' |
+            translate}}</a></li>
+        <li><a routerLink="/register" routerLinkActive="bg-green-600 p-3 rounded-lg text-white ">{{'Register'|
+            translate}}</a></li>
+        }
+
+        @if(isLogin)
+        {
+        <div class="w-4 flex items-center">
+
+          <button type="button"
+            class="relative inline-flex items-center px-3 py-3 text-sm font-medium text-center  rounded-lg  ">
+            <i routerLink="cart" class="fa-solid fa-cart-shopping text-main"></i>
+            <div
+              class="absolute inline-flex items-center justify-center w-6 h-6 font-bold text-white bg-green-500 border-2 border-white rounded-full -top-2 -end-2 dark:border-gray-900">
+              <p>{{cart}}</p></div>
+          </button>
+
+          <button type="button"
+            class="relative ps-2 inline-flex items-center py-3 text-sm font-medium text-center rounded-lg  ">
+            <i routerLink="wishlist" class="fa-solid fa-heart px-2" style="color: #f80d0d;"></i>
+            <div
+              class="absolute inline-flex items-center justify-center w-6 h-6 font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -end-2 dark:border-gray-900">
+              <p>{{wishlist}}</p>
+            </div>
+          </button>
+
+        </div>
+
+        <li class="px-5 ms-12 cursor-pointer"><a (click)="logout()">{{'Logout' | translate}}</a></li>
+        <li class="p-1 ms-4 flex justify-center border border-green-600 rounded-full w-15 "><a class="cursor-pointer "
+            (click)="changeLang('en')">En</a></li>
+        <li class="p-1 flex justify-center border border-green-600 rounded-full w-15 "><a class="cursor-pointer"
+            (click)="changeLang('ar')">Ar</a></li>
+        }
+      </ul>
+
+      <div class="cursor-pointer gap-3 flex flex-row justify-center px-3">
+        <i class="cursor-pointer fa-brands fa-facebook"></i>
+        <i class="cursor-pointer fa-brands fa-youtube"></i>
+        <i class="cursor-pointer fa-brands fa-linkedin"></i>
+        <i class="cursor-pointer fa-brands fa-instagram"></i>
+        <i class="cursor-pointer fa-brands fa-twitter"></i>
+      </div>
+
+    </div>
+
+  </div>
+
+</nav>

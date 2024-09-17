@@ -1,0 +1,41 @@
+@for (item of myWishlist ; track $index)
+{
+
+    <div  class="product  relative cursor-pointer flex w-1/4 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+        <!-- img , titl -->
+        <div >
+            <div class="p-0 relative h-96 overflow-hidden bg-white bg-clip-border text-gray-700">
+                <img  [src]="item.imageCover" class="image w-100 object-cover" />
+            </div>
+            <div class="mx-3 py-3">
+                <div class="mb-2 flex justify-between">
+                    <p class=" text-main block font-sans text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
+                        {{item.category.name}}
+                    </p>
+                </div>
+                <p class="block font-sans text-sm font-normal leading-normal text-gray-700 antialiased opacity-75">
+                   {{item.title}}
+                </p>
+            </div>
+            <div class=" p-4 flex items-center justify-between">
+                <p class=" text-main block font-sans text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
+                    {{item.price}} EGP
+                </p>
+                <p class="block font-sans text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
+                    <i class="fa-solid fa-star rating-color"></i>
+                    {{item.ratingsAverage}}
+                </p>
+            </div>
+        </div> 
+        <!-- button -->
+        <!-- <div class="p-6 product flex justify-between items-center">
+            
+            <i (click)="addToWishlist(item._id)" class="fa-solid fa-heart px-2" style="color: #f80d0d;"></i>
+        </div> -->
+
+
+       
+
+    </div>
+
+}

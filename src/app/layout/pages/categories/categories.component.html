@@ -1,0 +1,30 @@
+
+<div class="my-5 py-5">
+
+    <div class="w-90 mx-auto flex flex-col lg:flex-row flex-wrap gap-y-3">
+
+        @for (item of myCategores; track $index)
+        {
+
+            <div  class="product shadow overflow-hidden relative cursor-pointer flex w-1/4 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+                <!-- img , titl -->
+                <div >
+                <div class="p-0 relative overflow-hidden bg-white bg-clip-border text-gray-700">
+                        <img  [src]="item.image" class="image w-full object-cover" />
+                    </div>
+                    <div class="mx-3 py-3">
+                        <div class="mb-2 ">
+                            <p class=" text-main text-center block font-sans text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
+                                {{item.name}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+        }
+
+    </div>
+
+</div>
